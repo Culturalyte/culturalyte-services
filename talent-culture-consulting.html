@@ -1,0 +1,1421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Talent & Culture Strategy Consulting | Culturalyte</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --teal: #1ec8aa;
+            --teal-light: rgba(30, 200, 170, 0.08);
+            --teal-soft: rgba(30, 200, 170, 0.15);
+            --purple: #a06cd5;
+            --purple-light: rgba(160, 108, 213, 0.08);
+            --purple-soft: rgba(160, 108, 213, 0.15);
+            --cream: #faf8f5;
+            --cream-dark: #f5f2ed;
+            --mint: #e8f5f2;
+            --orange: #f4a261;
+            --orange-light: rgba(244, 162, 97, 0.1);
+            --orange-soft: rgba(244, 162, 97, 0.2);
+            --text-dark: #2d3436;
+            --text-medium: #4a5568;
+            --text-light: #718096;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--cream);
+            color: var(--text-dark);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            line-height: 1.3;
+        }
+
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: var(--white);
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.06);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 16px 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-logo img {
+            height: 50px;
+            width: auto;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+
+        .nav-links a {
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--text-medium);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--orange);
+        }
+
+        .nav-cta {
+            background: var(--orange) !important;
+            color: var(--white) !important;
+            padding: 10px 20px !important;
+            border-radius: 50px;
+            transition: all 0.3s ease !important;
+        }
+
+        .nav-cta:hover {
+            background: #e8945a !important;
+            transform: translateY(-2px);
+        }
+
+        .nav-mobile-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+        }
+
+        .nav-mobile-toggle span {
+            width: 24px;
+            height: 2px;
+            background: var(--text-dark);
+            transition: all 0.3s ease;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--text-dark);
+            color: var(--white);
+            padding: 60px 40px 30px;
+        }
+
+        .footer-container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .footer-main {
+            display: grid;
+            grid-template-columns: 1.5fr 2fr;
+            gap: 60px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-logo {
+            height: 60px;
+            width: auto;
+            margin-bottom: 16px;
+        }
+
+        .footer-brand p {
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.7);
+            max-width: 280px;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 60px;
+        }
+
+        .footer-col h4 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--orange);
+            margin-bottom: 20px;
+        }
+
+        .footer-col a {
+            display: block;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            margin-bottom: 12px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-col a:hover {
+            color: var(--white);
+        }
+
+        .footer-bottom {
+            padding-top: 24px;
+            text-align: center;
+        }
+
+        .footer-bottom p {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* Navigation placeholder */
+        .nav-placeholder {
+            height: 80px;
+            background: var(--white);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            background: linear-gradient(145deg, var(--cream) 0%, var(--orange-light) 30%, var(--mint) 70%, var(--cream) 100%);
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            background: radial-gradient(ellipse at top right, var(--orange-light) 0%, transparent 60%);
+            animation: breathe 15s ease-in-out infinite;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60%;
+            height: 80%;
+            background: radial-gradient(ellipse at bottom left, var(--teal-light) 0%, transparent 60%);
+            animation: breathe 20s ease-in-out infinite reverse;
+        }
+
+        @keyframes breathe {
+            0%, 100% { opacity: 0.8; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.1); }
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 40px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--white);
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--orange);
+            margin-bottom: 32px;
+            box-shadow: 0 4px 20px rgba(244, 162, 97, 0.2);
+            animation: riseUp 0.8s ease-out;
+        }
+
+        .hero-badge::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: var(--orange);
+            border-radius: 50%;
+            animation: glow 2s ease-in-out infinite;
+        }
+
+        @keyframes glow {
+            0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(244, 162, 97, 0.4); }
+            50% { opacity: 0.8; box-shadow: 0 0 0 8px rgba(244, 162, 97, 0); }
+        }
+
+        @keyframes riseUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 3.8rem);
+            color: var(--text-dark);
+            margin-bottom: 24px;
+            max-width: 850px;
+            animation: riseUp 0.8s ease-out 0.1s both;
+        }
+
+        .hero h1 span {
+            background: linear-gradient(135deg, var(--orange) 0%, var(--teal) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-intro {
+            font-size: 1.15rem;
+            color: var(--text-medium);
+            max-width: 680px;
+            margin-bottom: 40px;
+            animation: riseUp 0.8s ease-out 0.2s both;
+        }
+
+        .hero-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: linear-gradient(135deg, var(--orange) 0%, #e8945a 100%);
+            color: var(--white);
+            padding: 16px 32px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            animation: riseUp 0.8s ease-out 0.3s both;
+        }
+
+        .hero-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(244, 162, 97, 0.4);
+        }
+
+        .hero-cta svg {
+            width: 20px;
+            height: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .hero-cta:hover svg {
+            transform: translateX(4px);
+        }
+
+        /* Section Base */
+        section {
+            padding: 100px 40px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        /* Section Headers */
+        .section-label {
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--orange);
+            margin-bottom: 16px;
+        }
+
+        .section-title {
+            font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+            color: var(--text-dark);
+            margin-bottom: 20px;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-medium);
+            max-width: 600px;
+        }
+
+        /* Who This Is For Section */
+        .who-section {
+            background: var(--white);
+        }
+
+        .who-header {
+            margin-bottom: 60px;
+        }
+
+        .who-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+
+        .who-card {
+            padding: 36px;
+            background: var(--cream);
+            border-radius: 20px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .who-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--orange), var(--teal));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+
+        .who-card:hover {
+            background: var(--white);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.06);
+        }
+
+        .who-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .who-icon {
+            width: 56px;
+            height: 56px;
+            background: var(--orange-light);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--orange);
+            margin-bottom: 24px;
+        }
+
+        .who-card h3 {
+            font-size: 1.15rem;
+            color: var(--text-dark);
+            margin-bottom: 12px;
+        }
+
+        .who-card p {
+            font-size: 0.95rem;
+            color: var(--text-light);
+        }
+
+        /* What's Included Section */
+        .included-section {
+            background: var(--cream);
+        }
+
+        .included-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .included-header .section-subtitle {
+            margin: 0 auto;
+        }
+
+        .included-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .included-card {
+            padding: 32px;
+            background: var(--white);
+            border-radius: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .included-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 48px rgba(244, 162, 97, 0.12);
+        }
+
+        .included-number {
+            position: absolute;
+            top: 20px;
+            right: 24px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--orange);
+            opacity: 0.1;
+        }
+
+        .included-icon {
+            width: 64px;
+            height: 64px;
+            margin: 0 auto 24px;
+            background: linear-gradient(135deg, var(--orange-light) 0%, var(--teal-light) 100%);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--orange);
+        }
+
+        .included-card h3 {
+            font-size: 1.1rem;
+            color: var(--text-dark);
+            margin-bottom: 12px;
+        }
+
+        .included-card p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        /* Outcomes Section */
+        .outcomes-section {
+            background: linear-gradient(135deg, var(--text-dark) 0%, #1a1f24 100%);
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .outcomes-section::before {
+            content: '';
+            position: absolute;
+            top: -30%;
+            right: -10%;
+            width: 60%;
+            height: 160%;
+            background: radial-gradient(ellipse at center, rgba(244, 162, 97, 0.1) 0%, transparent 60%);
+        }
+
+        .outcomes-section::after {
+            content: '';
+            position: absolute;
+            bottom: -20%;
+            left: -10%;
+            width: 50%;
+            height: 120%;
+            background: radial-gradient(ellipse at center, rgba(30, 200, 170, 0.08) 0%, transparent 60%);
+        }
+
+        .outcomes-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .outcomes-header {
+            margin-bottom: 60px;
+        }
+
+        .outcomes-section .section-label {
+            color: var(--orange);
+        }
+
+        .outcomes-section .section-title {
+            color: var(--white);
+        }
+
+        .outcomes-section .section-subtitle {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .outcomes-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .outcome-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            padding: 28px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .outcome-item:hover {
+            background: rgba(255, 255, 255, 0.06);
+            border-color: rgba(244, 162, 97, 0.3);
+            transform: translateX(8px);
+        }
+
+        .outcome-check {
+            width: 32px;
+            height: 32px;
+            min-width: 32px;
+            background: rgba(244, 162, 97, 0.15);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--orange);
+        }
+
+        .outcome-text {
+            font-size: 1.05rem;
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 500;
+        }
+
+        /* Why This Works Section */
+        .why-section {
+            background: var(--white);
+        }
+
+        .why-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .why-text .section-subtitle {
+            margin-bottom: 24px;
+        }
+
+        .why-description {
+            font-size: 1rem;
+            color: var(--text-medium);
+            line-height: 1.9;
+        }
+
+        .why-visual {
+            position: relative;
+        }
+
+        .approach-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .approach-card {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            padding: 28px;
+            background: var(--cream);
+            border-radius: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .approach-card:hover {
+            background: linear-gradient(135deg, var(--orange-light) 0%, var(--cream) 100%);
+            transform: translateX(8px);
+        }
+
+        .approach-icon {
+            width: 56px;
+            height: 56px;
+            min-width: 56px;
+            background: var(--white);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--orange);
+            box-shadow: 0 4px 16px rgba(244, 162, 97, 0.15);
+        }
+
+        .approach-content h4 {
+            font-size: 1rem;
+            color: var(--text-dark);
+            margin-bottom: 4px;
+        }
+
+        .approach-content p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        /* EDGE Framework Section */
+        .edge-section {
+            background: var(--cream);
+        }
+
+        .edge-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .edge-header .section-label {
+            color: var(--teal);
+        }
+
+        .edge-header .section-subtitle {
+            margin: 0 auto;
+        }
+
+        .edge-wheel {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .edge-item {
+            padding: 36px;
+            background: var(--white);
+            border-radius: 20px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .edge-item:hover {
+            box-shadow: 0 12px 40px rgba(30, 200, 170, 0.12);
+        }
+
+        .edge-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--teal-light) 0%, transparent 60%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .edge-item:hover::before {
+            opacity: 1;
+        }
+
+        .edge-item-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .edge-letter-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px;
+            height: 48px;
+            background: var(--teal);
+            color: var(--white);
+            border-radius: 12px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .edge-item h3 {
+            font-size: 1.2rem;
+            color: var(--text-dark);
+            margin-bottom: 12px;
+        }
+
+        .edge-item p {
+            font-size: 0.95rem;
+            color: var(--text-light);
+        }
+
+        /* Timeline Section */
+        .timeline-section {
+            background: var(--white);
+        }
+
+        .timeline-layout {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .timeline-info .section-subtitle {
+            margin-bottom: 32px;
+        }
+
+        .timeline-range {
+            display: flex;
+            align-items: baseline;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .range-numbers {
+            font-family: 'Poppins', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--orange) 0%, var(--teal) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1;
+        }
+
+        .range-unit {
+            font-size: 1.2rem;
+            color: var(--text-medium);
+        }
+
+        .timeline-note {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            padding: 20px;
+            background: linear-gradient(135deg, var(--orange-light) 0%, var(--teal-light) 100%);
+            border-radius: 12px;
+        }
+
+        .timeline-phases {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .phase-card {
+            padding: 28px;
+            background: var(--cream);
+            border-radius: 16px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .phase-card:hover {
+            background: var(--white);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+            transform: translateY(-4px);
+        }
+
+        .phase-week {
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--orange);
+            margin-bottom: 8px;
+        }
+
+        .phase-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--orange) 0%, #e8945a 50%, var(--teal) 100%);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(ellipse at top, rgba(255, 255, 255, 0.15) 0%, transparent 50%);
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta-section h2 {
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            color: var(--white);
+            margin-bottom: 20px;
+        }
+
+        .cta-section p {
+            font-size: 1.15rem;
+            color: rgba(255, 255, 255, 0.95);
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 18px 36px;
+            background: var(--white);
+            color: var(--text-dark);
+            border-radius: 50px;
+            text-decoration: none;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+        }
+
+        .cta-btn svg {
+            width: 20px;
+            height: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .cta-btn:hover svg {
+            transform: translateX(4px);
+        }
+
+        /* Footer placeholder */
+        .footer-placeholder {
+            height: 80px;
+            background: var(--text-dark);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .who-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .included-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .why-layout,
+            .timeline-layout {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .edge-wheel {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            section {
+                padding: 60px 24px;
+            }
+
+            .hero-container {
+                padding: 60px 24px;
+            }
+
+            .included-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .outcomes-list {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline-phases {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-container {
+                padding: 16px 24px;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--white);
+                flex-direction: column;
+                padding: 24px;
+                gap: 16px;
+                box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-mobile-toggle {
+                display: flex;
+            }
+
+            .footer {
+                padding: 40px 24px 24px;
+            }
+
+            .footer-main {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 32px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="https://www.culturalyte.com" class="nav-logo">
+                <img src="https://static.wixstatic.com/media/957165_4ba47b9663e744e9940e4d4a6b6a4c7d~mv2.png/v1/fill/w_180,h_180,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/957165_4ba47b9663e744e9940e4d4a6b6a4c7d~mv2.png" alt="Culturalyte">
+            </a>
+            <div class="nav-links">
+                <a href="https://www.culturalyte.com">Home</a>
+                <a href="./manager-coaching.html">Manager Coaching</a>
+                <a href="./onboarding-integration.html">Onboarding</a>
+                <a href="./talent-culture-consulting.html" class="active">Consulting</a>
+                <a href="https://calendly.com/hello-culturalyte/30min" class="nav-cta">Book a Call</a>
+            </div>
+            <button class="nav-mobile-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-badge">Strategic Consulting</div>
+            <h1>Talent & Culture<br><span>Strategy Consulting</span></h1>
+            <p class="hero-intro">
+                Strengthen culture, clarify expectations, and improve the overall employee experience. We support HR and people leaders with data-informed, human-centered strategies that create better alignment across teams and reduce workplace friction.
+            </p>
+            <a href="https://calendly.com/hello-culturalyte/30min" class="hero-cta">
+                Schedule a Strategy Call
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+            </a>
+        </div>
+    </section>
+
+    <!-- Who This Is For Section -->
+    <section class="who-section">
+        <div class="container">
+            <div class="who-header">
+                <span class="section-label">Who This Is For</span>
+                <h2 class="section-title">Leaders shaping culture and talent strategy</h2>
+                <p class="section-subtitle">This consulting partnership is designed for organizations ready to invest in the systems and strategies that drive long-term retention and performance.</p>
+            </div>
+
+            <div class="who-grid">
+                <div class="who-card">
+                    <div class="who-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                        </svg>
+                    </div>
+                    <h3>CHROs and HR Leaders</h3>
+                    <p>Senior people leaders looking to strengthen organizational culture and drive measurable improvements in retention and engagement.</p>
+                </div>
+
+                <div class="who-card">
+                    <div class="who-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                        </svg>
+                    </div>
+                    <h3>Talent Development & L&D Teams</h3>
+                    <p>Learning leaders who want to build programs that actually shift behavior and strengthen leadership capability.</p>
+                </div>
+
+                <div class="who-card">
+                    <div class="who-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                        </svg>
+                    </div>
+                    <h3>Organizations Navigating Growth</h3>
+                    <p>Companies scaling quickly who need consistent people practices that can grow with them without losing culture.</p>
+                </div>
+
+                <div class="who-card">
+                    <div class="who-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                        </svg>
+                    </div>
+                    <h3>Leaders Improving Retention</h3>
+                    <p>Organizations experiencing turnover challenges who want a strategic, systemic approach to keeping talent.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What's Included Section -->
+    <section class="included-section">
+        <div class="container">
+            <div class="included-header">
+                <span class="section-label">What's Included</span>
+                <h2 class="section-title">A comprehensive consulting partnership</h2>
+                <p class="section-subtitle">Every element is designed to help organizations build stronger culture, clearer systems, and more effective leadership.</p>
+            </div>
+
+            <div class="included-grid">
+                <div class="included-card">
+                    <span class="included-number">01</span>
+                    <div class="included-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                        </svg>
+                    </div>
+                    <h3>Culture Assessments</h3>
+                    <p>Data-driven analysis of your current culture, including surveys, interviews, and organizational review.</p>
+                </div>
+
+                <div class="included-card">
+                    <span class="included-number">02</span>
+                    <div class="included-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                        </svg>
+                    </div>
+                    <h3>Talent Development Recommendations</h3>
+                    <p>Strategic guidance on building leadership capability and developing your people pipeline.</p>
+                </div>
+
+                <div class="included-card">
+                    <span class="included-number">03</span>
+                    <div class="included-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                        </svg>
+                    </div>
+                    <h3>Retention & Engagement Planning</h3>
+                    <p>Strategies for keeping your best people and creating conditions where they thrive.</p>
+                </div>
+
+                <div class="included-card">
+                    <span class="included-number">04</span>
+                    <div class="included-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                        </svg>
+                    </div>
+                    <h3>Policy & Communication Alignment</h3>
+                    <p>Ensuring your policies, messaging, and practices all point in the same direction.</p>
+                </div>
+
+                <div class="included-card">
+                    <span class="included-number">05</span>
+                    <div class="included-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                        </svg>
+                    </div>
+                    <h3>Leadership Playbooks</h3>
+                    <p>Practical guides that help managers and leaders implement strategies consistently.</p>
+                </div>
+
+                <div class="included-card">
+                    <span class="included-number">06</span>
+                    <div class="included-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                        </svg>
+                    </div>
+                    <h3>Onboarding & Manager Processes</h3>
+                    <p>Systems and frameworks for welcoming talent and developing leadership capability.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Expected Outcomes Section -->
+    <section class="outcomes-section">
+        <div class="container">
+            <div class="outcomes-content">
+                <div class="outcomes-header">
+                    <span class="section-label">Expected Outcomes</span>
+                    <h2 class="section-title">What transformation looks like</h2>
+                    <p class="section-subtitle">Measurable shifts in culture, leadership, and the employee experience.</p>
+                </div>
+
+                <div class="outcomes-list">
+                    <div class="outcome-item">
+                        <div class="outcome-check">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                            </svg>
+                        </div>
+                        <span class="outcome-text">Clearer culture expectations</span>
+                    </div>
+
+                    <div class="outcome-item">
+                        <div class="outcome-check">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                            </svg>
+                        </div>
+                        <span class="outcome-text">Improved early-career retention</span>
+                    </div>
+
+                    <div class="outcome-item">
+                        <div class="outcome-check">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                            </svg>
+                        </div>
+                        <span class="outcome-text">More consistent manager behaviors</span>
+                    </div>
+
+                    <div class="outcome-item">
+                        <div class="outcome-check">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                            </svg>
+                        </div>
+                        <span class="outcome-text">Healthier team communication</span>
+                    </div>
+
+                    <div class="outcome-item">
+                        <div class="outcome-check">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                            </svg>
+                        </div>
+                        <span class="outcome-text">Better alignment across HR, managers, and employees</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why This Works Section -->
+    <section class="why-section">
+        <div class="container">
+            <div class="why-layout">
+                <div class="why-text">
+                    <span class="section-label">Why This Approach Works</span>
+                    <h2 class="section-title">Strategy that's human-centered and real</h2>
+                    <p class="section-subtitle">
+                        Culturalyte blends lived experience, talent development best practices, and culturally responsive strategies.
+                    </p>
+                    <p class="why-description">
+                        We help organizations create environments where people feel supported and leaders feel equipped. This isn't about theory. It's about practical, sustainable change that works in the real world of your organization.
+                    </p>
+                </div>
+
+                <div class="why-visual">
+                    <div class="approach-cards">
+                        <div class="approach-card">
+                            <div class="approach-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                </svg>
+                            </div>
+                            <div class="approach-content">
+                                <h4>Lived Experience</h4>
+                                <p>Strategies grounded in real-world understanding of workforce dynamics</p>
+                            </div>
+                        </div>
+
+                        <div class="approach-card">
+                            <div class="approach-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                                </svg>
+                            </div>
+                            <div class="approach-content">
+                                <h4>Best Practices</h4>
+                                <p>Evidence-based approaches from talent development research</p>
+                            </div>
+                        </div>
+
+                        <div class="approach-card">
+                            <div class="approach-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                            </div>
+                            <div class="approach-content">
+                                <h4>Cultural Responsiveness</h4>
+                                <p>Strategies that honor generational and cultural differences</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EDGE Framework Section -->
+    <section class="edge-section">
+        <div class="container">
+            <div class="edge-header">
+                <span class="section-label">Our Framework</span>
+                <h2 class="section-title">Built on the EDGE Framework™</h2>
+                <p class="section-subtitle">The framework anchors the consulting process so organizations strengthen expectations, long-term development, growth pathways, and ongoing engagement habits.</p>
+            </div>
+
+            <div class="edge-wheel">
+                <div class="edge-item">
+                    <div class="edge-item-content">
+                        <div class="edge-letter-badge">E</div>
+                        <h3>Expectation</h3>
+                        <p>Establishing clear, consistent expectations that create alignment across the organization and reduce ambiguity for employees at every level.</p>
+                    </div>
+                </div>
+
+                <div class="edge-item">
+                    <div class="edge-item-content">
+                        <div class="edge-letter-badge">D</div>
+                        <h3>Development</h3>
+                        <p>Building systems for ongoing learning and growth that help employees develop skills and leaders build capability over time.</p>
+                    </div>
+                </div>
+
+                <div class="edge-item">
+                    <div class="edge-item-content">
+                        <div class="edge-letter-badge">G</div>
+                        <h3>Growth</h3>
+                        <p>Creating clear pathways for advancement and career development that help people see their future within your organization.</p>
+                    </div>
+                </div>
+
+                <div class="edge-item">
+                    <div class="edge-item-content">
+                        <div class="edge-letter-badge">E</div>
+                        <h3>Engagement</h3>
+                        <p>Strengthening connection, belonging, and purpose so employees feel invested in the work and committed to staying.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section class="timeline-section">
+        <div class="container">
+            <div class="timeline-layout">
+                <div class="timeline-info">
+                    <span class="section-label">Timeline</span>
+                    <h2 class="section-title">A strategic partnership</h2>
+                    <p class="section-subtitle">
+                        Consulting engagements are designed to create meaningful, lasting change. The timeline depends on scope and organizational complexity.
+                    </p>
+                    <div class="timeline-range">
+                        <span class="range-numbers">8-16</span>
+                        <span class="range-unit">weeks</span>
+                    </div>
+                    <p class="timeline-note">Typical consulting projects run 8 to 16 weeks. Longer engagements are available for organizations needing ongoing strategic support.</p>
+                </div>
+
+                <div class="timeline-phases">
+                    <div class="phase-card">
+                        <div class="phase-week">Weeks 1-2</div>
+                        <div class="phase-title">Discovery & Assessment</div>
+                    </div>
+                    <div class="phase-card">
+                        <div class="phase-week">Weeks 3-6</div>
+                        <div class="phase-title">Strategy Development</div>
+                    </div>
+                    <div class="phase-card">
+                        <div class="phase-week">Weeks 7-12</div>
+                        <div class="phase-title">Implementation Support</div>
+                    </div>
+                    <div class="phase-card">
+                        <div class="phase-week">Weeks 13-16</div>
+                        <div class="phase-title">Review & Handoff</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to strengthen your culture?</h2>
+                <p>Schedule a strategy call to explore how Culturalyte can help your organization build the systems and strategies that drive retention, engagement, and performance.</p>
+                <a href="https://calendly.com/hello-culturalyte/30min" class="cta-btn">
+                    Schedule a Strategy Call
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-main">
+                <div class="footer-brand">
+                    <img src="https://static.wixstatic.com/media/957165_4ba47b9663e744e9940e4d4a6b6a4c7d~mv2.png/v1/fill/w_180,h_180,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/957165_4ba47b9663e744e9940e4d4a6b6a4c7d~mv2.png" alt="Culturalyte" class="footer-logo">
+                    <p>Developing leaders for the next generation of work.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-col">
+                        <h4>Services</h4>
+                        <a href="./manager-coaching.html">Manager Coaching</a>
+                        <a href="./onboarding-integration.html">Onboarding & Integration</a>
+                        <a href="./talent-culture-consulting.html">Culture Consulting</a>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Connect</h4>
+                        <a href="https://www.culturalyte.com">Main Website</a>
+                        <a href="https://calendly.com/hello-culturalyte/30min">Book a Call</a>
+                        <a href="mailto:hello@culturalyte.com">hello@culturalyte.com</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Culturalyte. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileToggle = document.querySelector('.nav-mobile-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        
+        mobileToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
